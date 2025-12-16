@@ -1,17 +1,14 @@
 install:
 	npm ci
 
-test:
-	npm run test
-
-test-coverage:
-	npm run test-coverage
+develop:
+	npm run dev
 
 lint:
 	npx eslint .
 
 lint-fix:
-	npx eslint --fix .
+	npx eslint . --fix
 
-publish:
-	npm publish --dry-run
+build:
+	NODE_ENV=production npm run build
