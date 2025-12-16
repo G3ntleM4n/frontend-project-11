@@ -9,4 +9,10 @@
 make install
 ```
 
+## Run
+
+```sh
+make develop
+```
+
 See other commands in [Makefile](./Makefile)
