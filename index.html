@@ -9,14 +9,25 @@
   <title>frontend-project-11</title>
 </head>
 
-<body class="max-w-5xl m-auto">
-  <header class="flex flex-col mt-5">
-    <form class="flex flex-row justify-center-sаfe" id="search-form">
-      <label for="rss-search" class="hidden">Ссылка RSS</label>
-      <input type="text" name="search" id="rss-search" placeholder="RSS Search"
-        class="form-input flex flex-grow mr-5">
-      <button type="submit" class="border p-2 cursor-pointer">Добавить</button>
+<body>
+  <header class="flex flex-col px-80 pb-10 bg-slate-700">
+    <div class="header-text pb-5">
+      <h1 class="text-white">RSS агрегатор</h1>
+      <span class="text-white">Начните читать RSS сегодня! Это легко, это красиво.</span>
+    </div>
+    <form id="search-form" class="flex flex-col justify-center" novalidate>
+      <label for="rss-search" class="text-white">Ссылка RSS</label>
+      <div class="flex flex-row gap-2">
+        <input type="url" name="search" id="rss-search" placeholder="ссылка RSS"
+          aria-describedby="rss-example" class="form-input rounded-sm grow-7">
+        <button type="submit"
+          class="bg-blue-500 grow-1 py-2 rounded-sm cursor-pointer self-center text-white"
+          id="submit-button">Добавить</button>
+      </div>
     </form>
+    <span id="rss-example" class="text-gray-300">
+      Пример: https://ru.wikipedia.org/wiki/Lorem_ipsum
+    </span>
   </header>
 </body>
 
