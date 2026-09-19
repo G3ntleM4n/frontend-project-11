@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
 
 <head>
   <meta charset="UTF-8">
@@ -13,16 +13,15 @@
   <header class="flex flex-col px-80 pb-10 bg-slate-700">
     <div class="header-text pb-5">
       <h1 class="text-white">RSS агрегатор</h1>
-      <span class="text-white">Начните читать RSS сегодня! Это легко, это красиво.</span>
+      <span id="quote" class="text-white">Начните читать RSS сегодня! Это легко, это красиво.</span>
     </div>
     <form id="search-form" class="flex flex-col justify-center" novalidate>
-      <label for="rss-search" class="text-white">Ссылка RSS</label>
+      <label id="headerLabel" for="rss-search" class="text-white">Ссылка RSS</label>
       <div class="flex flex-row gap-2">
         <input type="url" name="search" id="rss-search" placeholder="ссылка RSS"
           aria-describedby="rss-example" class="form-input rounded-sm grow-7">
-        <button type="submit"
-          class="bg-blue-500 grow-1 py-2 rounded-sm cursor-pointer self-center text-white"
-          id="submit-button">Добавить</button>
+        <button type="submit" id="submit-button"
+          class="bg-blue-500 grow-1 py-2 rounded-sm cursor-pointer self-center text-white">Добавить</button>
       </div>
     </form>
     <span id="rss-example" class="text-gray-300">
