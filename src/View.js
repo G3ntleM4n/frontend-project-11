@@ -1,6 +1,6 @@
 import { snapshot } from 'valtio/vanilla'
 
-const header = document.querySelector('header')
+const example = document.getElementById('rss-example')
 const searchField = document.querySelector('#rss-search')
 const submit = document.querySelector('#submit-button')
 
@@ -22,7 +22,7 @@ const toggleSearchForm = (status) => {
     submit.classList.add('bg-blue-300')
   }
 }
-const createMessage = (status, ...errors) => {
+const createMessage = (status, lang, errors = []) => {
   const span = document.createElement('span')
   if (status === 'negative') {
     span.classList.add('message', 'text-red-500')
@@ -30,12 +30,12 @@ const createMessage = (status, ...errors) => {
 
   } else if (status === 'positive') {
     span.classList.add('message', 'text-green-500')
-    span.textContent = 'RSS успешно загружен'
+    span.textContent = lang.t('header.messages.correct')
   }
-  header.lastElementChild.after(span)
+  example.after(span)
 }
 
-export const updateUI = (searchState) => {
+export const updateUI = (searchState, lang) => {
   const searchForm = snapshot(searchState)
   const { status } = searchForm
 
@@ -46,7 +46,7 @@ export const updateUI = (searchState) => {
     }
     case 'success': {
       toggleSearchForm('enable')
-      createMessage('positive')
+      createMessage('positive', lang)
       searchField.value = ''
       searchField.focus()
       break
@@ -56,7 +56,7 @@ export const updateUI = (searchState) => {
       searchField.classList.add('border-red-500')
 
       const errors = searchForm.errors
-      createMessage('negative', errors)
+      createMessage('negative', lang, errors)
       break
     }
     default: {

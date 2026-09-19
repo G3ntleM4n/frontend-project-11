@@ -1,0 +1,18 @@
+export default {
+  translation: {
+    header: {
+      h1: 'RSS агрегатор',
+      quote: 'Начните читать RSS сегодня! Это легко, это красиво.',
+      label: 'Ссылка RSS',
+      placeholder: 'ссылка RSS',
+      submitButton: 'Добавить',
+      example: 'Пример: https://ru.wikipedia.org/wiki/Lorem_ipsum',
+      messages: {
+        empty: 'Не должно быть пустым',
+        wrong: 'Ссылка должна быть валидным URL',
+        exists: 'Адрес уже добавлен',
+        correct: 'RSS успешно загружен',
+      }
+    }
+  }
+}
